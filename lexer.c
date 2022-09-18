@@ -8,7 +8,7 @@
 	Código 4xx EOF
 	Código 5xx tokens invalidos */
 enum lex_code{
-		L_CORCHETE = 200, 
+L_CORCHETE = 200, 
 		R_CORCHETE = 201,
 		L_LLAVE = 202,
 		R_LLAVE = 203,
