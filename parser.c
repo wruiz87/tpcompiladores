@@ -508,8 +508,8 @@ void json(){
 
 void element(){
 	
-	//Element no debe convocar a get_token()
-	//printf("Convoca a element con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//Element no debe invocar a get_token()
+	//printf("Invoca a element con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	switch(token->lexcod){
 		//element=>object
 		//case '{':
@@ -529,7 +529,7 @@ void element(){
 
 void object(){
 
-	//printf("Convoca a object con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a object con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	//Verifica si el token actual es un {
 	match(L_LLAVE);
 		token = get_token();
@@ -550,7 +550,7 @@ void object(){
 
 void array(){
 
-	//printf("Convoca a array con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a array con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	match(L_CORCHETE);
 	token = get_token();
 	
@@ -568,7 +568,7 @@ void array(){
 
 void element_list(){
 
-	//printf("Convoca a element_list con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a element_list con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	element();
 
 	token = get_token();
@@ -582,7 +582,7 @@ void element_list(){
 
 void attribute_list(){
 
-	//printf("Convoca a attribute_list con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a attribute_list con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	attribute();
 
 	token = get_token();
@@ -597,7 +597,7 @@ void attribute_list(){
 void attribute(){
 
 	//attribute => attribute-name : attribute-value
-	//printf("Convoca a attribute con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a attribute con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	attribute_name();
 	token = get_token();
 	match(DOS_PUNTOS);
@@ -607,13 +607,13 @@ void attribute(){
 
 void attribute_name(){
 
-	//printf("Convoca a attribute_name con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a attribute_name con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 	match(LITERAL_CADENA);
 }
 
 void attribute_value(){
 
-	//printf("Convoca a attribute_value con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
+	//printf("Invoca a attribute_value con token : %d , %s\n", token->lexcod, to_lex_component(token->lexcod));
 
 	switch(token->lexcod){
 		case LITERAL_CADENA:
